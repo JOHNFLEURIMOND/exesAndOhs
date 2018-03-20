@@ -1,76 +1,36 @@
-![Codewars](img/exesAndOhs.png)
+![Codewars](img/sortTheOdds.png)
 
 # My Awesome Project
-Question:
-Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char!
+You have an array of numbers.
+Your task is to sort ascending odd numbers but even numbers must be on their places.
 
-Examples input/output:
+Zero isn't an odd number and you don't need to move it. If you have an empty array, you need to return it.
 
-XO("ooxx") => true
-XO("xooxx") => false
-XO("ooxXm") => true
-XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
-XO("zzoo") => false
+Example
 
-In this Codewars challenge, I received a question that must return a boolean and be sentitive
-
+sortArray([5, 3, 2, 8, 1, 4]) == [1, 3, 2, 8, 5, 4]
 ## How It's Made
-First I created an xCount & oCount and set to zero and return xCount === oCount.
+With this challenge, I knew had to write a callback function and set a variable for this new array I will be making of  sort ascending odd numbers but before I get to that I will have to write the functions
 
-function XO(str) {
-  let xCount = 0;
-  let oCount = 0;
+function sortArray(array) {
 
+  var odd = array.filter(is_odd).sort(ascending);
+  return array.map(replace_odd_inorder);
 
-  return xCount === oCount;
 }
 
 
-We have to look at every single letter (i < str.length;i++;) in the string so I had to set up a for(loop) for that!
-
-for (let i = 0; i < str.length; i++) {
-  let letter = str[i];
-  if (letter === "x" || letter === "X") {
-    xCount++;
-  } else if (letter === "o" || letter === "O") {
-    oCount++;
-  }
-}
-
-In the for(loop) I had to create a variable that made it easier to right the single letter in the string with let letter = str[i]; The if/else statements check for the letter and if it sees a x or X it will increase the count and do the same for o or O!
-
-
-all together it gives us.
-
-function XO(str) {
-  let xCount = 0;
-  let oCount = 0;
-
-  for (let i = 0; i < str.length; i++) {
-    let letter = str[i];
-    if (letter === "x" || letter === "X") {
-      xCount++;
-    } else if (letter === "o" || letter === "O") {
-      oCount++;
-    }
-  }
-  return xCount === oCount;
-}
 
 ## Sample Tests:
-Test.assertEquals(XO('xo'),true);
-Test.assertEquals(XO("xxOo"),true);
-Test.assertEquals(XO("xxxm"),false);
-Test.assertEquals(XO("Oo"),false);
-Test.assertEquals(XO("ooom"),false);
+
 
 
 ## Lessons Learned:
 
-How to properly use .sort(), .length, for(loops), if/else statements help me create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 integers.
+How to properly use .sort(), .length, functions, modules, ascending sort method.
 ## portfolio:
 
-**WEBSITE:** https:/johnfleurimond.com
+**WEBSITE:** https:johnfleurimond.com
 
 
 
